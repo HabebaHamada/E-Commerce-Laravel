@@ -70,14 +70,14 @@
                         class="flex-1 py-3 text-sm font-bold rounded transition-all">Sign up</button>
                 </div>
 
-                <form method="POST" action="{{ route('login') }}">
+                <form method="POST" action="{{ route('auth.handle') }}">
                     @csrf
-
+                    <input type="hidden" name="auth_mode" :value="mode">
                     <!-- STEP 1: Email & Social -->
                     <div x-show="step === 1">
                         <div class="relative border rounded-lg px-4 py-3 focus-within:ring-2 focus-within:ring-blue-400">
                             <label class="absolute -top-2.5 left-3 bg-white px-1 text-xs text-gray-500 font-semibold">Email address*</label>
-                            <input type="email" x-model="email" placeholder="Please enter email address"
+                            <input type="email" name="email" x-model="email" placeholder="Please enter email address"
                                 class="w-full outline-none text-gray-700 bg-transparent">
                         </div>
 

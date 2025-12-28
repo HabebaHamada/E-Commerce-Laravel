@@ -10,6 +10,10 @@ use Illuminate\Validation\Rules;
 
 class RegistrationController extends Controller
 {
+    public function create()
+    {
+        //return view('auth.register');
+    }
     public function Register(Request $request)
     {
         $validatedData = $request->validate([
