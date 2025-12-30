@@ -24,14 +24,6 @@
 </head>
 
 <body class="bg-gray-100">
-
-    <!-- Navbar Simulation -->
-    <nav class="bg-white border-b px-8 py-4 flex justify-around text-sm font-bold text-gray-700">
-        <a href="#" class="hover:text-yellow-500">Kids' Fashion</a>
-        <a href="#" class="hover:text-yellow-500">Beauty & Fragrance</a>
-        <a href="#" class="hover:text-yellow-500">Home & Appliances</a>
-    </nav>
-
     <!-- Background Content Mockup (The text behind the modal) -->
     <div class="p-10 grid grid-cols-4 gap-4 opacity-50 grayscale">
         @for ($i = 0; $i < 12; $i++)
@@ -83,7 +75,7 @@
                         class="flex-1 py-3 text-sm font-bold rounded transition-all">Sign up</button>
                 </div>
 
-                <form method="POST" action="{{ route('auth.handle') }}">
+                <form autocomplete="off" method="POST" action="{{ route('auth.handle') }}">
                     @csrf
                     @if ($errors->any())
                         <div
@@ -103,7 +95,7 @@
                             <label
                                 class="absolute -top-2.5 left-3 bg-white px-1 text-xs text-gray-500 font-semibold">Email
                                 address*</label>
-                            <input type="email" name="email" x-model="email" value="{{ old('email') }}"
+                            <input autocomplete="off" type="email" name="email" x-model="email" value="{{ old('email') }}"
                                 placeholder="Please enter email address"
                                 class="w-full outline-none text-gray-700 bg-transparent">
                         </div>
