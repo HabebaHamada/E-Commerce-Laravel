@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\ProfileController;
 
 
 Route::get('/dashboard', function () {
@@ -17,6 +18,9 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('/logout', [AuthorizationController::class, 'logout'])
     ->name('logout');
+
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+    Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 });
 
 
